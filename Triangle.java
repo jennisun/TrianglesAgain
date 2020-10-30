@@ -30,6 +30,16 @@ public class Triangle {
   }
 
 
+  public String classify() {
+
+    if (Math.round(v1.distanceTo(v2) * 100000) == Math.round(v2.distanceTo(v3) * 100000) && Math.round(v2.distanceTo(v3) * 100000) == Math.round(v3.distanceTo(v1) * 100000)) return "equilateral";
+    else {
+      if (Math.round(v1.distanceTo(v2) * 10000) == Math.round(v2.distanceTo(v3) * 100000) || Math.round(v2.distanceTo(v3) * 100000) == Math.round(v3.distanceTo(v1) * 100000)) return "isosceles";
+      else return "scalene";
+    }
+  }
+
+
 
 
 
