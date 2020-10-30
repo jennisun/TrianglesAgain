@@ -31,12 +31,23 @@ public class Triangle {
 
 
   public String classify() {
-
     if (Math.round(v1.distanceTo(v2) * 100000) == Math.round(v2.distanceTo(v3) * 100000) && Math.round(v2.distanceTo(v3) * 100000) == Math.round(v3.distanceTo(v1) * 100000)) return "equilateral";
     else {
       if (Math.round(v1.distanceTo(v2) * 10000) == Math.round(v2.distanceTo(v3) * 100000) || Math.round(v2.distanceTo(v3) * 100000) == Math.round(v3.distanceTo(v1) * 100000)) return "isosceles";
       else return "scalene";
     }
+  }
+
+
+  public String toString() {
+    return "v1(" + v1.getX() + ", " + v1.getY() + ") v2(" + v2.getX() + ", " + v2.getY() + ") v3(" + v3.getX() + ", " + v3.getY() + ")";
+  }
+
+
+  public void setVertex(int index, Point newP) {
+    if (index == 0) v1 = newP;
+    if (index == 1) v2 = newP;
+    else v3 = newP;
   }
 
 
